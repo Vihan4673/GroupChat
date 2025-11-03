@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.groupchatapp.controller.ServerController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" prefHeight="572.0" prefWidth="372.0" spacing="10.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="372.0" spacing="10.0">
+                    <children>
+                        <ImageView fx:id="pfp" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/cloud-server.png" />
+                            </image>
+                        </ImageView>
+                        <VBox spacing="5.0" prefWidth="300.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <Label text="Group Chat Server" textFill="#4a90e2">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="stopServerBtn" onAction="#stopServer" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;" text="Stop Server" />
+                                    </children>
+                                </HBox>
+                                <Label text="Connected Clients: 0" fx:id="clientCountLabel" textFill="#666666" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <ScrollPane fx:id="scrollPane" prefHeight="450.0" prefWidth="372.0" vbarPolicy="ALWAYS">
+                    <content>
+                        <VBox fx:id="chatDisplay" spacing="10.0" />
+                    </content>
+                </ScrollPane>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="372.0" spacing="10.0">
+                    <children>
+                        <TextField fx:id="msgInput" prefHeight="35.0" prefWidth="280.0" promptText="Type your message here..." />
+                        <Button fx:id="imageUpload" onAction="#imageUploadOnAction" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/import-export.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="sendBtn" onAction="#sendMsg" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                            <graphic>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../assets/send.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

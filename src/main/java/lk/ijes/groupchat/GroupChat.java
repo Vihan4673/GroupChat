@@ -32,7 +32,7 @@ public class GroupChat extends Application {
     }
 
     private void startServer() throws Exception {
-        javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(getClass().getResource("/groupchat/interfaces/ServerForm.fxml"));
+        javafx.scene.Parent root = javafx.fxml.FXMLLoader.load(getClass().getResource("/View/ServerForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Group Chat Server");
         stage.setScene(new javafx.scene.Scene(root));
@@ -45,7 +45,7 @@ public class GroupChat extends Application {
     }
 
     private void startClient(int clientNumber) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/groupchat/interfaces/ClientForm.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/ClientForm.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Group Chat Client " + clientNumber);
         stage.setScene(new Scene(root));
